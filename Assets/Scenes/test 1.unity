@@ -266,8 +266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button1: {fileID: 1101481000}
   button2: {fileID: 706244661}
-  appearInterval: 15
-  disappearInterval: 5
+  appearInterval: 0
+  disappearInterval: 0
+  randomNumber1: 0
+  randomNumber2: 0
 --- !u!1 &227127085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,8 +1939,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button1: {fileID: 0}
   button2: {fileID: 0}
-  appearInterval: 10
+  appearInterval: 2
   disappearInterval: 2
+  randomNumber1: 0
+  randomNumber2: 0
 --- !u!1 &1097986665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,5 +3079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button1: {fileID: 0}
   button2: {fileID: 0}
-  appearInterval: 10
+  appearInterval: 2
   disappearInterval: 2
+  randomNumber1: 0
+  randomNumber2: 0
