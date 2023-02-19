@@ -2212,6 +2212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ddb1c17ea6878e499bbba214223717e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linegoal: {fileID: 0}
   winText: {fileID: 1261661658}
 --- !u!1 &1062003876
 GameObject:
@@ -2610,6 +2611,7 @@ GameObject:
   - component: {fileID: 1157305901}
   - component: {fileID: 1157305903}
   - component: {fileID: 1157305902}
+  - component: {fileID: 1157305906}
   - component: {fileID: 1157305905}
   m_Layer: 0
   m_Name: Sphere
@@ -2697,6 +2699,20 @@ CapsuleCollider:
   m_Height: 7.88
   m_Direction: 1
   m_Center: {x: -0.029937625, y: 0.09581256, z: 0.025610268}
+--- !u!114 &1157305906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157305900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5f6e27617f61644a9260f7d991b354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier2: 3
+  duration2: 5
 --- !u!1 &1261661657
 GameObject:
   m_ObjectHideFlags: 0
