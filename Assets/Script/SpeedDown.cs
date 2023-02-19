@@ -6,47 +6,53 @@ public class SpeedDown : MonoBehaviour
 {
     public float multiplier2 = 3f;
     public float duration2 = 5f;
-    public GameObject pickupEffect2;
+    //public GameObject pickupEffect2;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter (Collider other)
     {
-
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1"))
         {
-
             StartCoroutine(Pickup2(other));
+        }
+        else if (other.CompareTag("Player2"))
+        {
+            StartCoroutine(Pickup3(other));
         }
     }
 
-    IEnumerator Pickup2(Collider player)
+    IEnumerator Pickup2(Collider player1)
     {
-        /*   Instantiate(pickupEffect2, transform.position, transform.rotation);
-           //Debug.Log("BOOM!");
-           PlayerStats stats = player.GetComponent<PlayerStats>();
-           stats.walkSpeed /= multiplier2;
-           stats.sprintSpeed /= multiplier2;
-           GetComponent<MeshRenderer>().enabled = false;
-           GetComponent<Collider>().enabled = false;
-           yield return new WaitForSeconds(duration2); //(4);
-           stats.sprintSpeed *= multiplier2;
-           stats.sprintSpeed *= multiplier2;
-           Destroy(gameObject);
-   */
-        Instantiate(pickupEffect2, transform.position, transform.rotation);
+        //Instantiate(pickupEffect2, transform.position, transform.rotation);
 
-        MoveForwardOnButtonPress PlayerMove = player.GetComponent<MoveForwardOnButtonPress>();
+        MoveForwardOnButtonPress PlayerMove = player1.GetComponent<MoveForwardOnButtonPress>();
         PlayerMove.speed /= multiplier2;
-        //PlayerMove.sprintSpeed /= multiplier2;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
-        yield return new WaitForSeconds(duration2); //(4);
+        yield return new WaitForSeconds(duration2);
 
         PlayerMove.speed *= multiplier2;
-        //PlayerMove.sprintSpeed *= multiplier2;
 
         Destroy(gameObject);
+        Debug.Log("Sht touch");
+    }
 
+    IEnumerator Pickup3(Collider player2)
+    {
+        //Instantiate(pickupEffect2, transform.position, transform.rotation);
+
+        MoveForwardOnButtonPress PlayerMove = player2.GetComponent<MoveForwardOnButtonPress>();
+        PlayerMove.speed /= multiplier2;
+
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(duration2);
+
+        PlayerMove.speed *= multiplier2;
+
+        Destroy(gameObject);
+        Debug.Log("Sht touch");
     }
 }

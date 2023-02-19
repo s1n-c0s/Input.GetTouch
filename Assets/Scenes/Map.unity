@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1012,7 +1012,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 3
   duration: 2.5
-  pickupEffect: {fileID: 0}
 --- !u!114 &697477568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2612,6 +2611,7 @@ GameObject:
   - component: {fileID: 1157305903}
   - component: {fileID: 1157305902}
   - component: {fileID: 1157305905}
+  - component: {fileID: 1157305906}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -2698,6 +2698,20 @@ CapsuleCollider:
   m_Height: 7.147013
   m_Direction: 1
   m_Center: {x: -0.029937625, y: 0.09581256, z: 0.025610268}
+--- !u!114 &1157305906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157305900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5f6e27617f61644a9260f7d991b354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier2: 3
+  duration2: 5
 --- !u!1 &1261661657
 GameObject:
   m_ObjectHideFlags: 0
