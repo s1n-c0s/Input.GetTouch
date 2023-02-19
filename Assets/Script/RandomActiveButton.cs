@@ -6,13 +6,13 @@ using System;
 public class RandomActiveButton : MonoBehaviour
 {
     public GameObject normalBT , SwapBT;
-    public float normalForm, swapForm;
+    public float normalForm , swapForm;
     public int numToSwap, numToTurnBack;
 
-    void Start()
+    void Start() //come back some day/ min-max
     {
 
-        numToSwap = UnityEngine.Random.Range(10, 20);
+        numToSwap = UnityEngine.Random.Range(8, 13);
         Debug.Log(numToSwap);
 
         numToTurnBack = UnityEngine.Random.Range(5, 7);
@@ -22,6 +22,7 @@ public class RandomActiveButton : MonoBehaviour
         normalBT.SetActive(true);
         SwapBT.SetActive(false);
         Invoke("SwitchButtons", normalForm = numToSwap);
+        Debug.Log("Countdown before swap: " + numToSwap + " seconds");
     }
 
     void SwitchButtons()
@@ -29,6 +30,7 @@ public class RandomActiveButton : MonoBehaviour
         normalBT.SetActive(false);
         SwapBT.SetActive(true);
         Invoke("TurnBack", swapForm = numToTurnBack);
+        Debug.Log("Countdown after swap: " + numToTurnBack + " seconds");
     }
 
     void TurnBack()
