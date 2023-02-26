@@ -627,8 +627,6 @@ MonoBehaviour:
   BackMaxT: 7
   normalForm: 0
   swapForm: 0
-  numToSwap: 0
-  numToTurnBack: 0
 --- !u!1 &189274081
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,12 +790,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2459d0ee709d9d049a595c12649c7fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentModeIndex: 0
   gameModeList:
   - {fileID: 1101481000}
   - {fileID: 706244661}
   - {fileID: 1306331356}
   - {fileID: 1215697880}
-  currentModeIndex: 0
+  modeDuration: 3
 --- !u!4 &222414105
 Transform:
   m_ObjectHideFlags: 0
@@ -3020,8 +3019,6 @@ MonoBehaviour:
   BackMaxT: 0
   normalForm: 2
   swapForm: 2
-  numToSwap: 0
-  numToTurnBack: 0
 --- !u!1 &1097986665
 GameObject:
   m_ObjectHideFlags: 0
@@ -5713,8 +5710,6 @@ MonoBehaviour:
   BackMaxT: 0
   normalForm: 2
   swapForm: 2
-  numToSwap: 0
-  numToTurnBack: 0
 --- !u!1001 &7988825076138536615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5779,8 +5774,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988825076448335814, guid: 42b17ab97e10c84439f10abfb60efafb,
         type: 3}
+      propertyPath: MaxTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988825076448335814, guid: 42b17ab97e10c84439f10abfb60efafb,
+        type: 3}
+      propertyPath: MinTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988825076448335814, guid: 42b17ab97e10c84439f10abfb60efafb,
+        type: 3}
       propertyPath: SetMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988825076448335814, guid: 42b17ab97e10c84439f10abfb60efafb,
+        type: 3}
+      propertyPath: BackMaxT
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988825076448335814, guid: 42b17ab97e10c84439f10abfb60efafb,
+        type: 3}
+      propertyPath: BackMinT
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7988825076448335814, guid: 42b17ab97e10c84439f10abfb60efafb,
         type: 3}

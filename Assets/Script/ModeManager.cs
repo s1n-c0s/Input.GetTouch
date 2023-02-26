@@ -1,7 +1,56 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ModeManager : MonoBehaviour
+{
+    public int currentModeIndex;
+    public GameObject[] gameModeList;
+    public float modeDuration = 5.0f; // time in seconds for each mode
+    private int previousModeIndex;
+    private Coroutine modeCoroutine;
+
+    private void Start()
+    {
+        SetMode(currentModeIndex);
+    }
+
+    public void SetMode(int modeIndex)
+    {
+        if (modeIndex >= 0 && modeIndex < gameModeList.Length && modeIndex != currentModeIndex)
+        {
+            previousModeIndex = currentModeIndex;
+            currentModeIndex = modeIndex;
+            ActivateMode(currentModeIndex);
+            if (modeCoroutine != null) StopCoroutine(modeCoroutine);
+            modeCoroutine = StartCoroutine(ChangeModeAfterDelay(previousModeIndex, modeDuration));
+        }
+    }
+
+    private void ActivateMode(int modeIndex)
+    {
+        for (int i = 0; i < gameModeList.Length; i++)
+        {
+            if (i == modeIndex)
+            {
+                gameModeList[i].SetActive(true);
+            }
+            else
+            {
+                gameModeList[i].SetActive(false);
+            }
+        }
+    }
+
+    private IEnumerator ChangeModeAfterDelay(int previousModeIndex, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SetMode(0);
+        modeCoroutine = null;
+    }
+}
+
+
+/*public class ModeManager : MonoBehaviour
 {
     public List<GameObject> gameModeList;
     public int currentModeIndex;
@@ -37,4 +86,4 @@ public class ModeManager : MonoBehaviour
         currentModeIndex = modeIndex;
         gameModeList[currentModeIndex].SetActive(true);
     }
-}
+}*/

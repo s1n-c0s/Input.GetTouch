@@ -9,9 +9,9 @@ public class RandomActiveButton : MonoBehaviour
 {
     public List<GameObject> mode = new List<GameObject>();
     public int MaxTime, MinTime, BackMinT, BackMaxT;
+    private int numToSwap, numToTurnBack;
 
     public float normalForm , swapForm;
-    public int numToSwap, numToTurnBack;
 
     void Start() //come back some day/ min-max
     {

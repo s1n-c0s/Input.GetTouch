@@ -6,7 +6,7 @@ public class RandomMode : MonoBehaviour
 
     public void ChangeModeRandomly()
     {
-        int newModeIndex = Random.Range(1, modeManager.gameModeList.Count);
+        int newModeIndex = Random.Range(1, modeManager.gameModeList.Length);
         modeManager.SetMode(newModeIndex);
     }
 }
