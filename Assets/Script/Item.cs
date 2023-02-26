@@ -1,7 +1,13 @@
 using UnityEngine;
 
-public class MoveObject : MonoBehaviour
+public class Item : MonoBehaviour
 {
+    public ModeManager modeManager;
+    public RandomMode randomMode;
+    public bool SetMode;
+    public int newModeIndex;
+
+
     public float speed = 3f; // Speed at which the object moves
     public float loopDistance = 5f; // Distance the object moves before looping
 
@@ -12,6 +18,7 @@ public class MoveObject : MonoBehaviour
     {
         startPosition = transform.position.x; // Get the starting position of the object
     }
+
 
     void Update()
     {
@@ -32,6 +39,19 @@ public class MoveObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        item_Set(SetMode);
         Destroy(gameObject);
+    }
+
+    public void item_Set(bool item_setMode)
+    {
+        if (item_setMode)
+        {
+            modeManager.SetMode(newModeIndex);
+        }
+        else
+        {
+            randomMode.ChangeModeRandomly();
+        }
     }
 }

@@ -2,41 +2,52 @@ using UnityEngine;
 
 using System.Collections;
 using System;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class RandomActiveButton : MonoBehaviour
 {
-    public GameObject normalBT , SwapBT;
+    public List<GameObject> mode = new List<GameObject>();
+    public int MaxTime, MinTime, BackMinT, BackMaxT;
+
     public float normalForm , swapForm;
     public int numToSwap, numToTurnBack;
 
     void Start() //come back some day/ min-max
     {
 
-        numToSwap = UnityEngine.Random.Range(8, 13);
+        numToSwap = UnityEngine.Random.Range(MinTime, MaxTime);
         Debug.Log(numToSwap);
 
-        numToTurnBack = UnityEngine.Random.Range(5, 7);
+        numToTurnBack = UnityEngine.Random.Range(BackMinT, BackMaxT);
         Debug.Log(numToTurnBack);
 
-
-        normalBT.SetActive(true);
-        SwapBT.SetActive(false);
+        mode[0].SetActive(true);
+        //normalBT.SetActive(true);
+        
+        mode[1].SetActive(false);
+        //SwapBT.SetActive(false);
         Invoke("SwitchButtons", normalForm = numToSwap);
         Debug.Log("Countdown before swap: " + numToSwap + " seconds");
     }
 
     void SwitchButtons()
     {
-        normalBT.SetActive(false);
-        SwapBT.SetActive(true);
+        mode[0].SetActive(false);
+        mode[1].SetActive(true);
+
+        //normalBT.SetActive(false);
+        //SwapBT.SetActive(true);
         Invoke("TurnBack", swapForm = numToTurnBack);
         Debug.Log("Countdown after swap: " + numToTurnBack + " seconds");
     }
 
     void TurnBack()
     {
-        normalBT.SetActive(true);
-        SwapBT.SetActive(false);
+        mode[0].SetActive(true);
+        mode[1].SetActive(false);
+        /*normalBT.SetActive(true);
+        SwapBT.SetActive(false);*/
     }   
 }
     
