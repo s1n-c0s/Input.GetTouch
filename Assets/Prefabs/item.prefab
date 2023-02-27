@@ -110,5 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a436d399223f62947b0590e7f0086985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modeManager: {fileID: 0}
+  randomMode: {fileID: 0}
+  SetMode: 0
+  newModeIndex: 3
   speed: 3
   loopDistance: 4
