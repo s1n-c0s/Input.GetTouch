@@ -6,6 +6,7 @@ public class ModeManager : MonoBehaviour
     public int currentModeIndex;
     public GameObject[] gameModeList;
     public float modeDuration = 5.0f; // time in seconds for each mode
+    public float modeDouble = 1f;
     private int previousModeIndex;
     private Coroutine modeCoroutine;
 
@@ -22,7 +23,14 @@ public class ModeManager : MonoBehaviour
             currentModeIndex = modeIndex;
             ActivateMode(currentModeIndex);
             if (modeCoroutine != null) StopCoroutine(modeCoroutine);
-            modeCoroutine = StartCoroutine(ChangeModeAfterDelay(previousModeIndex, modeDuration));
+            if (currentModeIndex is 2 or 3)
+            {
+                modeCoroutine = StartCoroutine(ChangeModeAfterDelay(previousModeIndex, modeDouble));
+            }
+            else
+            {
+                modeCoroutine = StartCoroutine(ChangeModeAfterDelay(previousModeIndex, modeDuration));
+            }
         }
     }
 
