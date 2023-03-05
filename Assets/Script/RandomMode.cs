@@ -16,6 +16,10 @@ public class RandomMode : MonoBehaviour
                 IsPlayed++;
                 modeManager.SetMode(newModeIndex);
             }
+            else
+            {
+                modeManager.SetMode(newModeIndex);
+            }
         }
         else
         {
